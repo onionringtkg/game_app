@@ -18,3 +18,10 @@
     <p class="text-right font-weight-bold mr-10"><%= @board.name %></p>
   </div>
 </div>
+
+<div class="p-comment_list">
+  <div class="p-comment_listTitle">コメント</div>
+  <%= render @board.comments %>
+</div>
+
+<%= render partial: 'comments/form', locals: { comment:@comment } %>

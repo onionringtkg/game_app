@@ -18,5 +18,9 @@
 #  fk_rails_...  (board_id => boards.id)
 #
 class Comment < ApplicationRecord
+  /これによって関連づけられる（外部keyの設定必須）/
   belongs_to :board
+
+  validates :name, presence: true, length: { maximum: 10 }
+  validates :comment, presence: true, length: { maximum: 1000 }
 end
